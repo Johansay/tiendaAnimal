@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 PetShop - Tienda de Productos para Animales</title>
+    <meta name="description" content="PetShop - Tu tienda de confianza para productos de mascotas. Encuentra comida, juguetes, accesorios y más para perros, gatos, aves y peces.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#">
+                <span class="brand-icon">🐾</span> PetShop
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#categorias">Categorías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart3 fs-5"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" class="hero-section d-flex align-items-center position-relative overflow-hidden">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative z-2">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <span class="badge bg-light text-success px-3 py-2 mb-3 fs-6 rounded-pill">🐶 Bienvenido a PetShop</span>
+                    <h1 class="display-3 fw-bold text-white mb-3 lh-1.2">
+                        Todo lo que tu <span class="text-warning">mejor amigo</span> necesita
+                    </h1>
+                    <p class="lead text-white-50 mb-4 fs-5">Productos de calidad para perros, gatos, aves y peces. Envío gratis en compras mayores a $50.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start flex-wrap">
+                        <a href="#productos" class="btn btn-warning btn-lg rounded-pill px-4 fw-bold shadow-lg hero-btn">Comprar Ahora <i class="bi bi-arrow-right ms-2"></i></a>
+                        <a href="#categorias" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold">Explorar Categorías</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80" alt="Mascotas felices" class="img-fluid hero-img" onerror="this.src='https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=format&fit=crop&w=600&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTOS DESTACADOS ===== -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-success px-3 py-2 mb-2">🌟 Destacados</span>
+                <h2 class="fw-bold display-6">Productos <span class="text-success">Destacados</span></h2>
+                <p class="text-muted">Los favoritos de nuestros clientes</p>
+            </div>
+            <div class="row g-4" id="featuredProducts"></div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORÍAS ===== -->
+    <section id="categorias" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-warning text-dark px-3 py-2 mb-2">📂 Categorías</span>
+                <h2 class="fw-bold display-6">Explora por <span class="text-warning">Categoría</span></h2>
+                <p class="text-muted">Encuentra lo que necesitas para tu mascota</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <a href="#" class="text-decoration-none category-card d-block" data-filter="perros">
+                        <div class="card border-0 shadow-sm category-card-inner">
+                            <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=400&q=80" class="card-img-top category-img" alt="Perros" onerror="this.src='https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=format&fit=crop&w=400&q=80'">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold mb-0">🐶 Perros</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="#" class="text-decoration-none category-card d-block" data-filter="gatos">
+                        <div class="card border-0 shadow-sm category-card-inner">
+                            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=400&q=80" class="card-img-top category-img" alt="Gatos" onerror="this.src='https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=format&fit=crop&w=400&q=80'">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold mb-0">🐱 Gatos</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="#" class="text-decoration-none category-card d-block" data-filter="aves">
+                        <div class="card border-0 shadow-sm category-card-inner">
+                            <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=400&q=80" class="card-img-top category-img" alt="Aves" onerror="this.src='https://images.pexels.com/photos/36762/scarlet-honeyeater-bird-red-feathers.jpg?auto=format&fit=crop&w=400&q=80'">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold mb-0">🐦 Aves</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="#" class="text-decoration-none category-card d-block" data-filter="peces">
+                        <div class="card border-0 shadow-sm category-card-inner">
+                            <img src="https://images.pexels.com/photos/128557/pexels-photo-128557.jpeg?auto=format&fit=crop&w=400&q=80" class="card-img-top category-img" alt="Peces" onerror="this.src='https://images.pexels.com/photos/908272/pexels-photo-908272.jpeg?auto=format&fit=crop&w=400&q=80'">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold mb-0">🐟 Peces</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTOS ===== -->
+    <section id="productos" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-success px-3 py-2 mb-2">🛍️ Productos</span>
+                <h2 class="fw-bold display-6">Nuestros <span class="text-success">Productos</span></h2>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-md-6">
+                        <div class="input-group shadow-sm">
+                            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                            <input type="text" class="form-control border-start-0 ps-0" id="searchInput" placeholder="Buscar productos...">
+                            <button class="btn btn-success" id="searchBtn"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center gap-2 mt-3 flex-wrap" id="filterButtons">
+                    <button class="btn btn-outline-success btn-sm rounded-pill filter-btn active" data-filter="all">Todos</button>
+                    <button class="btn btn-outline-success btn-sm rounded-pill filter-btn" data-filter="perros">🐶 Perros</button>
+                    <button class="btn btn-outline-success btn-sm rounded-pill filter-btn" data-filter="gatos">🐱 Gatos</button>
+                    <button class="btn btn-outline-success btn-sm rounded-pill filter-btn" data-filter="aves">🐦 Aves</button>
+                    <button class="btn btn-outline-success btn-sm rounded-pill filter-btn" data-filter="peces">🐟 Peces</button>
+                </div>
+            </div>
+            <div class="row g-4" id="productGrid"></div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-info text-white px-3 py-2 mb-2">❓ FAQ</span>
+                <h2 class="fw-bold display-6">Preguntas <span class="text-info">Frecuentes</span></h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion shadow-sm" id="faqAccordion">
+                        <div class="accordion-item border-0 mb-2 rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button rounded-3 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    ¿Hacen envíos a todo el país?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Sí, realizamos envíos a todo el territorio nacional. El tiempo de entrega varía entre 2-7 días hábiles según la ubicación. Envíos gratis en compras mayores a $50.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-2 rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded-3 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    ¿Cuál es la política de devolución?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Aceptamos devoluciones dentro de los primeros 30 días posteriores a la compra. El producto debe estar en su estado original y empaque. Reembolsamos el 100% del valor.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-2 rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded-3 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    ¿Ofrecen garantía en los productos?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Todos nuestros productos cuentan con garantía de 6 meses contra defectos de fabricación. Las peceras y productos electrónicos tienen 1 año de garantía.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded-3 fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    ¿Tienen tienda física?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Sí, contamos con 3 sucursales: Ciudad de México, Guadalajara y Monterrey. Los horarios son de lunes a sábado de 9:00 a 20:00 hrs.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLIENTES FELICES ===== -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-success px-3 py-2 mb-2">💬 Testimonios</span>
+                <h2 class="fw-bold display-6">Clientes <span class="text-success">Felices</span></h2>
+                <p class="text-muted">Lo que dicen nuestros clientes</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 testimonial-card">
+                        <div class="card-body text-center p-4">
+                            <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=200&q=80" class="rounded-circle mb-3 testimonial-img" alt="Cliente" onerror="this.src='https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=format&fit=crop&w=200&q=80'">
+                            <div class="mb-2 text-warning">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text text-muted fst-italic">"Excelente servicio y productos de calidad. Mi perro Max está feliz con su nueva cama ortopédica. ¡Altamente recomendados!"</p>
+                            <h6 class="fw-bold mb-0">María García</h6>
+                            <small class="text-muted">Dueña de Max 🐕</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 testimonial-card">
+                        <div class="card-body text-center p-4">
+                            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=200&q=80" class="rounded-circle mb-3 testimonial-img" alt="Cliente" onerror="this.src='https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=format&fit=crop&w=200&q=80'">
+                            <div class="mb-2 text-warning">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text text-muted fst-italic">"El rascador que compré para mi gato Luna es de excelente calidad. Llegó en tiempo récord. Definitivamente volveré a comprar."</p>
+                            <h6 class="fw-bold mb-0">Carlos Mendoza</h6>
+                            <small class="text-muted">Dueño de Luna 🐱</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100 testimonial-card">
+                        <div class="card-body text-center p-4">
+                            <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=200&q=80" class="rounded-circle mb-3 testimonial-img" alt="Cliente" onerror="this.src='https://images.pexels.com/photos/36762/scarlet-honeyeater-bird-red-feathers.jpg?auto=format&fit=crop&w=200&q=80'">
+                            <div class="mb-2 text-warning">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text text-muted fst-italic">"Compré una jaula para mi loro Paco y le encanta. El equipo de PetShop me asesoró para elegir el tamaño perfecto. ¡Muy agradecido!"</p>
+                            <h6 class="fw-bold mb-0">Ana Martínez</h6>
+                            <small class="text-muted">Dueña de Paco 🐦</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FORMULARIO DE REGISTRO ===== -->
+    <section id="contacto" class="py-5">
+        <div class="container">
+            <div class="row g-0 shadow-lg rounded-4 overflow-hidden bg-white">
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="h-100 d-flex align-items-center justify-content-center p-4" style="background: linear-gradient(135deg, #28a745, #20c997);">
+                        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80" alt="Mascotas" class="img-fluid rounded-3" style="max-height: 400px; object-fit: cover;" onerror="this.src='https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                </div>
+                <div class="col-lg-7 p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold">Regístrate <span class="text-success">Ahora</span></h3>
+                        <p class="text-muted">Crea tu cuenta y recibe ofertas exclusivas</p>
+                    </div>
+                    <form id="registerForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Nombre</label>
+                                <input type="text" class="form-control form-control-lg" name="nombre" required placeholder="Tu nombre">
+                                <div class="invalid-feedback">Campo obligatorio</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Apellido</label>
+                                <input type="text" class="form-control form-control-lg" name="apellido" required placeholder="Tu apellido">
+                                <div class="invalid-feedback">Campo obligatorio</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Correo Electrónico</label>
+                                <input type="email" class="form-control form-control-lg" name="email" required placeholder="correo@ejemplo.com">
+                                <div class="invalid-feedback">Ingresa un correo válido</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Teléfono</label>
+                                <input type="tel" class="form-control form-control-lg" name="telefono" pattern="[0-9]{10}" required placeholder="5512345678">
+                                <div class="invalid-feedback">Ingresa 10 dígitos</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Contraseña</label>
+                                <input type="password" class="form-control form-control-lg" name="password" minlength="6" required placeholder="Mín. 6 caracteres">
+                                <div class="invalid-feedback">Mínimo 6 caracteres</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Confirmar Contraseña</label>
+                                <input type="password" class="form-control form-control-lg" name="confirmPassword" required placeholder="Repite la contraseña">
+                                <div class="invalid-feedback">Las contraseñas no coinciden</div>
+                            </div>
+                        </div>
+                        <div class="form-check mt-3">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                            <label class="form-check-label text-muted" for="termsCheck">Acepto los términos y condiciones</label>
+                            <div class="invalid-feedback">Debes aceptar los términos</div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg w-100 mt-3 rounded-pill fw-semibold shadow">
+                            <i class="bi bi-person-plus me-2"></i> Crear Cuenta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3"><span class="brand-icon">🐾</span> PetShop</h5>
+                    <p class="text-white-50">Tu tienda de confianza para productos de mascotas. Calidad y amor por los animales desde 2015.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-white-50 text-decoration-none social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white-50 text-decoration-none social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white-50 text-decoration-none social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-white-50 text-decoration-none social-icon"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="text-white-50 text-decoration-none social-icon"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a href="#hero" class="text-white-50 text-decoration-none">Inicio</a></li>
+                        <li class="mb-2"><a href="#productos" class="text-white-50 text-decoration-none">Productos</a></li>
+                        <li class="mb-2"><a href="#categorias" class="text-white-50 text-decoration-none">Categorías</a></li>
+                        <li class="mb-2"><a href="#contacto" class="text-white-50 text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Contacto</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Av. Siempre Viva 123, CDMX</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +52 55 1234 5678</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@petshop.mx</li>
+                        <li class="mb-2"><i class="bi bi-clock me-2"></i> Lun-Sáb: 9:00 - 20:00</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Suscríbete</h6>
+                    <p class="text-white-50 small">Recibe ofertas y novedades</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Tu correo">
+                        <button class="btn btn-success"><i class="bi bi-send"></i></button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="text-center text-white-50 small">
+                <p class="mb-0">&copy; 2026 PetShop. Todos los derechos reservados. Hecho con <i class="bi bi-heart-fill text-danger"></i> para los amantes de los animales.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL CARRITO ===== -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title fw-bold"><i class="bi bi-cart3 me-2"></i>Tu Carrito</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="cartEmpty" class="text-center py-5">
+                        <i class="bi bi-cart-x display-1 text-muted"></i>
+                        <p class="text-muted mt-3 fs-5">Tu carrito está vacío</p>
+                        <button class="btn btn-success rounded-pill" data-bs-dismiss="modal">Ir de compras</button>
+                    </div>
+                    <div id="cartContent" class="d-none">
+                        <div id="cartItems"></div>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <button class="btn btn-outline-danger btn-sm rounded-pill" id="clearCartBtn"><i class="bi bi-trash me-1"></i> Vaciar Carrito</button>
+                            </div>
+                            <div class="text-end">
+                                <p class="mb-1 text-muted">Subtotal: <span class="fw-bold text-dark fs-5" id="cartSubtotal">$0.00</span></p>
+                                <p class="mb-0 text-muted small">IVA incluido</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal"><i class="bi bi-arrow-left me-1"></i> Seguir Comprando</button>
+                    <button class="btn btn-success rounded-pill" id="checkoutBtn" disabled><i class="bi bi-check2-circle me-1"></i> Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+    <a href="https://wa.me/525512345678" target="_blank" class="whatsapp-btn position-fixed shadow-lg d-flex align-items-center justify-content-center text-white text-decoration-none z-3" id="whatsappBtn" aria-label="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp fs-3"></i>
+    </a>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="backToTop" class="position-fixed shadow d-flex align-items-center justify-content-center text-white border-0 z-3" aria-label="Volver arriba">
+        <i class="bi bi-chevron-up fs-5"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
