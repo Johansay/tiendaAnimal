@@ -45,9 +45,7 @@ tiendaAniamles/
 
 ## Imágenes
 
-Todas las imágenes son obtenidas de:
-- [Pexels](https://www.pexels.com/) — imágenes principales
-- [Unsplash](https://unsplash.com/) — imágenes de respaldo (fallback)
+Todas las imágenes son obtenidas de [Unsplash](https://unsplash.com/), con URLs verificadas funcionales.
 
 ## Cómo usar
 
