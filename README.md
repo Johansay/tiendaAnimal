@@ -66,7 +66,7 @@ Todas las imágenes provienen de [Unsplash](https://unsplash.com/) con URLs veri
 - **Filtros**: Por categoría (Perros, Gatos, Aves, Peces) y desde cards de categorías
 - **Formulario**: Validación HTML5 con feedback visual Bootstrap
 - **FAQ**: Acordeón Bootstrap con 4 preguntas frecuentes
-- **Notificaciones**: Toast dinámicos con反馈 visual
+- **Notificaciones**: Toast dinámicos con feedback visual
 - **Scroll animations**: IntersectionObserver para animaciones de entrada
 - **WhatsApp flotante**: Botón con enlace directo
 - **Volver arriba**: Botón con scroll suave
