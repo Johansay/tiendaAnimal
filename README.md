@@ -1,68 +1,81 @@
 # PetShop - Tienda de Productos para Animales
 
-Sitio web moderno y responsive para una tienda de productos para mascotas, construido con **HTML5**, **CSS3**, **Bootstrap 5** y **JavaScript vanilla**.
+Sitio web moderno y responsive para una tienda de productos para mascotas.
 
-## Características
+## Tecnologías
 
-- Navbar responsive con contador dinámico del carrito
-- Hero section con overlay y animaciones
-- Catálogo de 10 productos con imágenes reales (Pexels / Unsplash)
-- Categorías: Perros, Gatos, Aves, Peces
-- Buscador en tiempo real y filtros por categoría
-- Carrito de compras funcional con persistencia en localStorage
-- Formulario de registro con validaciones HTML5
-- Sección FAQ con accordion Bootstrap
-- Testimonios de clientes
-- Diseño responsive (mobile, tablet, desktop)
-- Efectos hover, animaciones y transiciones CSS
-- Botón flotante de WhatsApp y botón "Volver arriba"
+| Tecnología | Uso |
+|---|---|
+| HTML5 | Estructura semántica, ARIA, microdatos |
+| CSS3 | Variables CSS, animaciones, responsive design |
+| Bootstrap 5.3 | Grid, componentes, utilities |
+| Bootstrap Icons | Iconografía |
+| Google Fonts (Poppins) | Tipografía |
+| JavaScript vanilla | Lógica del carrito, filtros, búsqueda, validaciones |
+| localStorage | Persistencia del carrito entre sesiones |
+| IntersectionObserver | Animaciones al hacer scroll |
 
 ## Estructura del Proyecto
 
 ```
 tiendaAniamles/
-├── index.html              # Página principal
-├── README.md               # Documentación
-├── .gitignore              # Archivos ignorados por Git
-├── assets/
-│   ├── css/
-│   │   └── style.css       # Estilos personalizados
-│   └── js/
-│       └── script.js       # Lógica JavaScript (carrito, filtros, etc.)
+├── index.html              # Página principal (semántica, accesible)
+├── README.md               # Documentación del proyecto
+├── .gitignore              # Exclusiones para Git
+└── assets/
+    ├── css/
+    │   └── style.css       # Estilos con variables CSS y media queries
+    └── js/
+        └── script.js       # JS modular con estado centralizado
 ```
 
-## Tecnologías utilizadas
+## Buenas prácticas implementadas
 
-| Tecnología | Propósito |
-|---|---|
-| HTML5 | Estructura semántica del sitio |
-| CSS3 | Estilos, animaciones y diseño responsive |
-| Bootstrap 5.3 | Grid system, componentes (navbar, cards, modal, accordion, form) |
-| Bootstrap Icons | Íconos de redes sociales y UI |
-| Google Fonts (Poppins) | Tipografía moderna |
-| JavaScript vanilla | Carrito de compras, búsqueda, filtros, validaciones |
-| localStorage | Persistencia del carrito entre sesiones |
+### HTML
+- Etiquetas semánticas (`<header>`, `<main>`, `<nav>`, `<section>`)
+- Atributos ARIA (`aria-label`, `aria-current`, `aria-live`, `aria-hidden`)
+- Meta tags optimizados (description, theme-color, robots)
+- Preconexiones (preconnect) para mejorar tiempo de carga
+- Lazy loading en imágenes (`loading="lazy"`)
+- Favicon inline (SVG data URI)
+
+### CSS
+- Variables CSS (`:root`) para theming centralizado
+- Nomenclatura consistente de clases
+- Organización por secciones con comentarios
+- Media queries con breakpoints Bootstrap estándar
+- Transiciones y animaciones optimizadas (GPU)
+
+### JavaScript
+- Estado centralizado en objeto `state`
+- Funciones puras y separadas por dominio
+- Manejo de errores en localStorage
+- Event delegation donde aplica
+- Código comentado por módulos
 
 ## Imágenes
 
-Todas las imágenes son obtenidas de [Unsplash](https://unsplash.com/), con URLs verificadas funcionales.
+Todas las imágenes provienen de [Unsplash](https://unsplash.com/) con URLs verificadas funcionales. Cada producto tiene imagen principal y fallback.
+
+## Funcionalidades
+
+- **Catálogo**: 10 productos con nombre, descripción, precio, imagen y categoría
+- **Productos destacados**: Sección independiente con marcador `featured`
+- **Carrito**: Agregar, eliminar, actualizar cantidad, subtotal, vaciar. Persiste en localStorage
+- **Búsqueda**: Filtrado en tiempo real por nombre, descripción o categoría
+- **Filtros**: Por categoría (Perros, Gatos, Aves, Peces) y desde cards de categorías
+- **Formulario**: Validación HTML5 con feedback visual Bootstrap
+- **FAQ**: Acordeón Bootstrap con 4 preguntas frecuentes
+- **Notificaciones**: Toast dinámicos con反馈 visual
+- **Scroll animations**: IntersectionObserver para animaciones de entrada
+- **WhatsApp flotante**: Botón con enlace directo
+- **Volver arriba**: Botón con scroll suave
 
 ## Cómo usar
 
-1. Clona o descarga el repositorio.
-2. Abre el archivo `index.html` en tu navegador.
-3. No requiere servidor ni dependencias adicionales — funciona directamente.
-
-## Funcionalidades JavaScript
-
-- **Catálogo**: Array de objetos con 10 productos (nombre, descripción, precio, imagen, categoría, descuento).
-- **Carrito**: Agregar, eliminar, actualizar cantidad, calcular subtotal y vaciar. Persiste en localStorage.
-- **Búsqueda**: Filtrado en tiempo real por nombre, descripción o categoría.
-- **Filtros**: Botones para filtrar productos por categoría de mascota.
-- **Productos destacados**: Sección separada con los productos marcados como `featured`.
-- **Scroll animations**: Animaciones al hacer scroll usando IntersectionObserver.
-- **Toast notifications**: Notificaciones visuales al agregar/quitar productos del carrito.
+1. Abre `index.html` en tu navegador.
+2. No requiere servidor ni dependencias adicionales.
 
 ## Licencia
 
-Este proyecto es de uso libre y gratuito.
+Uso libre y gratuito.

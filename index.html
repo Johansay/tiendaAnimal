@@ -3,63 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐾 PetShop - Tienda de Productos para Animales</title>
+    <title>PetShop - Tienda de Productos para Animales</title>
     <meta name="description" content="PetShop - Tu tienda de confianza para productos de mascotas. Encuentra comida, juguetes, accesorios y más para perros, gatos, aves y peces.">
+    <meta name="theme-color" content="#28a745">
+    <meta name="robots" content="index, follow">
+
+    <!-- Preconexiones para rendimiento -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+
+    <!-- Hojas de estilo -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Favicon (emoji como fallback) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
 </head>
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" id="mainNavbar">
-        <div class="container">
-            <a class="navbar-brand fw-bold fs-4" href="#">
-                <span class="brand-icon">🐾</span> PetShop
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
-                    <li class="nav-item"><a class="nav-link active" href="#hero">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#categorias">Categorías</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link position-relative" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
-                            <i class="bi bi-cart3 fs-5"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge" id="cartCount">0</span>
-                        </a>
-                    </li>
-                </ul>
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" id="mainNavbar"
+             aria-label="Navegación principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="#" aria-label="PetShop - Ir al inicio">
+                    <span class="brand-icon" aria-hidden="true">🐾</span> PetShop
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav"
+                        aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                        <li class="nav-item"><a class="nav-link active" href="#hero" aria-current="page">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#categorias">Categorías</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" href="#" data-bs-toggle="modal"
+                               data-bs-target="#cartModal" aria-label="Abrir carrito de compras">
+                                <i class="bi bi-cart3 fs-5" aria-hidden="true"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge"
+                                      id="cartCount" aria-live="polite">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- ===== HERO SECTION ===== -->
-    <section id="hero" class="hero-section d-flex align-items-center position-relative overflow-hidden">
-        <div class="hero-overlay"></div>
+    <section id="hero" class="hero-section d-flex align-items-center position-relative overflow-hidden"
+             aria-label="Banner principal">
+        <div class="hero-overlay" aria-hidden="true"></div>
         <div class="container position-relative z-2">
             <div class="row align-items-center">
                 <div class="col-lg-7 text-center text-lg-start">
-                    <span class="badge bg-light text-success px-3 py-2 mb-3 fs-6 rounded-pill">🐶 Bienvenido a PetShop</span>
+                    <span class="badge bg-light text-success px-3 py-2 mb-3 fs-6 rounded-pill" aria-hidden="true">Bienvenido a PetShop</span>
                     <h1 class="display-3 fw-bold text-white mb-3 lh-1.2">
                         Todo lo que tu <span class="text-warning">mejor amigo</span> necesita
                     </h1>
                     <p class="lead text-white-50 mb-4 fs-5">Productos de calidad para perros, gatos, aves y peces. Envío gratis en compras mayores a $50.</p>
                     <div class="d-flex gap-3 justify-content-center justify-content-lg-start flex-wrap">
-                        <a href="#productos" class="btn btn-warning btn-lg rounded-pill px-4 fw-bold shadow-lg hero-btn">Comprar Ahora <i class="bi bi-arrow-right ms-2"></i></a>
+                        <a href="#productos" class="btn btn-warning btn-lg rounded-pill px-4 fw-bold shadow-lg hero-btn">
+                            Comprar Ahora <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+                        </a>
                         <a href="#categorias" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold">Explorar Categorías</a>
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block text-center">
-                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80" alt="Mascotas felices" class="img-fluid hero-img" onerror="this.src='https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=600&q=80'">
+                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80"
+                         alt="Grupo de mascotas felices: perros y gatos"
+                         class="img-fluid hero-img" loading="eager"
+                         onerror="this.src='https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=600&q=80'">
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <main>
 
     <!-- ===== PRODUCTOS DESTACADOS ===== -->
     <section class="py-5 bg-light">
@@ -154,6 +183,7 @@
     </section>
 
     <!-- ===== FAQ SECTION ===== -->
+    </main>
     <section class="py-5">
         <div class="container">
             <div class="text-center mb-5">
